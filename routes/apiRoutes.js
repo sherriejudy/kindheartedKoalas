@@ -1,11 +1,7 @@
 var db = require("../models");
 
 module.exports = function(app) {
-  //route for base site 
-  app.get("/", function(req,res){
-    res.send('Our site')
-    res.end()
-  })
+  
 
   // Get all examples
   app.get("/api/examples", function(req, res) {
