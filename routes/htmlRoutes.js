@@ -3,12 +3,8 @@ var db = require("../models");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    db.parkingSpot.selectAll({}).then(function(data){
-      res.render("index", {
-        msg: "Welcome to kPark!"
-      });
-    })
-      
+    res.send('test')
+    res.end()      
     });
 
 
