@@ -26,14 +26,9 @@ module.exports = function(sequelize, DataTypes) {
         len: [1]
       }
     },
-    
-    
-    
-    DataTypes.STRING,
     availability: DataTypes.BOOLEAN,
     lease_terms: DataTypes.TEXT,
     spot_size: DataTypes.STRING
-
   });
   return parkingSpot;
 };
