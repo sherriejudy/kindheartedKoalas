@@ -3,9 +3,10 @@ var db = require("../models");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-   res.send('test')
-   res.end()
-      
+    db.parkingSpot.findAll({}).then(function(data){
+      res.send(data)
+      res.end()
+    })  
     });
 
 
