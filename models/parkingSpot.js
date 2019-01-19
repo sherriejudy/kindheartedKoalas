@@ -1,6 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
   var parkingSpot = sequelize.define("parkingSpot", {
-
     address: {
       type: DataTypes.TEXT,
       allowNull: false,
@@ -18,7 +17,6 @@ module.exports = function(sequelize, DataTypes) {
         len: [1]
       }
     },
-
     rate_unit: {
       type: DataTypes.STRING,
       allowNull: false,
