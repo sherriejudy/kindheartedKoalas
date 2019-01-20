@@ -7,5 +7,13 @@ module.exports = function(sequelize, DataTypes) {
     price: DataTypes.INTEGER, 
     rate: DataTypes.ENUM('Daily','Weekly', 'Monthly')
   });
-  return parkingSpot;
+
+  lease.associate = function(models) {
+    lease.belongsTo(models.parkingSpot, {
+      foreignKey: {
+        allowNull: false 
+      }
+    })
+  }
+  return lease;
 };
