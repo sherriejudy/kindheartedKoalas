@@ -5,10 +5,12 @@ module.exports = function(app) {
   app.get("/", function(req, res) {
     db.parkingSpot.findAll({}).then(function(data){
       res.render("spotListing", {
+        msg: 'test',
         parkingSpots: data 
       })
+      })
     })  
-    });
+  
 
 
 

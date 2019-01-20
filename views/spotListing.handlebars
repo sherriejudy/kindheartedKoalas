@@ -1,5 +1,10 @@
 <div class="container">
+
   <ul>
-    {{parkingSpots}}
+    {{#each parkingSpots}}
+    <li>
+      {{this.address}}
+    </li>
+    {{/each}}
   </ul>
 </div>
