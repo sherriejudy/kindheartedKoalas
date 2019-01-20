@@ -4,10 +4,13 @@ module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
     db.parkingSpot.findAll({}).then(function(data){
-      res.send(data)
-      res.end()
+      res.render("spotListing", {
+        msg: 'test',
+        parkingSpots: data 
+      })
+      })
     })  
-    });
+  
 
 
 
