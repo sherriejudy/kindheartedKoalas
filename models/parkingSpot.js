@@ -7,9 +7,7 @@ module.exports = function(sequelize, DataTypes) {
         len: [1]
       }
     },
-
     image_reference: DataTypes.STRING,
-
     rate_dollar: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -17,16 +15,8 @@ module.exports = function(sequelize, DataTypes) {
         len: [1]
       }
     },
-    rate_unit: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [1]
-      }
-    },
-    availability: DataTypes.BOOLEAN,
-    lease_terms: DataTypes.TEXT,
-    spot_size: DataTypes.STRING
+    isAvailable: DataTypes.BOOLEAN,
+    spot_desription: DataTypes.STRING
   });
 
   parkingSpot.associate = function(models){
@@ -34,7 +24,5 @@ module.exports = function(sequelize, DataTypes) {
       onDelete: 'cascade'
     })
   }
-
-
   return parkingSpot;
 };
