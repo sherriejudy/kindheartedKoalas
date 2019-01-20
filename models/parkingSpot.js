@@ -28,5 +28,13 @@ module.exports = function(sequelize, DataTypes) {
     lease_terms: DataTypes.TEXT,
     spot_size: DataTypes.STRING
   });
+
+  parkingSpot.associate = function(models){
+    parkingSpot.hasOne(models.lease, {
+      onDelete: 'cascade'
+    })
+  }
+
+
   return parkingSpot;
 };

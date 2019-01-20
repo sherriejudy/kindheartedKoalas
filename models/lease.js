@@ -3,7 +3,9 @@ module.exports = function(sequelize, DataTypes) {
     first_name_leasor: DataTypes.STRING,
     last_name_leasor: DataTypes.STRING, 
     from_date: DataTypes.DATE, 
-    to_date: 
+    to_date: DataTypes.DATE,
+    price: DataTypes.INTEGER, 
+    rate: DataTypes.ENUM('Daily','Weekly', 'Monthly')
   });
   return parkingSpot;
 };
