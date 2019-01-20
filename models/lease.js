@@ -6,7 +6,7 @@ module.exports = function(sequelize, DataTypes) {
     to_date: DataTypes.DATE,
     pmt_frq: {
       type: DataTypes.ENUM,
-      values: [12,52]
+      values: ['12','52']
     },
     price: {
       type: DataTypes.DECIMAL(6,2),
