@@ -4,9 +4,17 @@ module.exports = function(sequelize, DataTypes) {
     last_name_leasor: DataTypes.STRING, 
     from_date: DataTypes.DATE, 
     to_date: DataTypes.DATE,
-    price: DataTypes.INTEGER, 
-    rate: DataTypes.ENUM('Daily','Weekly', 'Monthly')
-  });
+    pmt_frq: {
+      type: DataTypes.ENUM,
+      values: ['12','52']
+    },
+    price: {
+      type: DataTypes.DECIMAL(6,2),
+      allowNull: false
+      }
+    
+    })
+  
 
   lease.associate = function(models) {
     lease.belongsTo(models.parkingSpot, {
