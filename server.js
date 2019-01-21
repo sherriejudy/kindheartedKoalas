@@ -12,14 +12,24 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static("public"));
 
+var hbs = exphbs.create({
+  defaultLayout: 'main',
+  // Specify helpers which are only registered on this instance.
+  helpers: {
+      pmtFrq: function (pmtFrq) { if (pmtFrq == '12') {return 'Monthly'}},
+      bar: function () { return 'BAR!'; }
+  }
+});
+
 // Handlebars
 app.engine(
   "handlebars",
-  exphbs({
-    defaultLayout: "main"
-  })
+  hbs.engine
 );
 app.set("view engine", "handlebars");
+
+// helpers for hbs
+
 
 // Routes
 require("./routes/apiRoutes")(app);
