@@ -16,8 +16,12 @@ var hbs = exphbs.create({
   defaultLayout: 'main',
   // Specify helpers which are only registered on this instance.
   helpers: {
-      pmtFrq: function (pmtFrq) { if (pmtFrq == '12') {return 'Monthly'}},
-      bar: function () { return 'BAR!'; }
+      pmtFrq: function (pmtFrq) { 
+        if (pmtFrq == '12') 
+        {return 'Monthly'}
+      else {
+        return 'Weekly'
+      }},
   }
 });
 
