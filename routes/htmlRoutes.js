@@ -4,14 +4,12 @@ module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
     db.parkingSpot.findAll({
-      include:[{ 
-        model: address
-      }]
+      include:[db.address, db.lease]
     })
     .then(function(data){
       res.render("spotListing", {
         msg: 'test',
-        parkingSpots: data 
+        parkingSpots: data
       })
       })
     })

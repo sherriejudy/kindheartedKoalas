@@ -9,6 +9,10 @@ module.exports = function(sequelize, DataTypes) {
     parkingSpot.hasOne(models.lease, {
       onDelete: 'cascade'
     })
+
+    parkingSpot.hasOne(models.address, {
+      onDelete: 'cascade'
+    })
     
 
   }
