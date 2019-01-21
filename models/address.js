@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-  var address = sequelize.define("lease", {
+  var address = sequelize.define("address", {
     address_type: {
       type: DataTypes.ENUM,
       values: ['parkingSpot', 'account']
@@ -31,15 +31,12 @@ module.exports = function(sequelize, DataTypes) {
 
   address.associate = function(models) {
     address.belongsTo(models.parkingSpot, {
-      foreignKey: {
-        allowNull: false 
-      }
+      foreignKey: 'parkingSpotId'
     })
     address.belongsTo(models.lease, {
-      foreignKey: {
-        allowNull: false
-      }
+      foreignKey: 'leaseId'
     })
   }
+  
   return address;
 };

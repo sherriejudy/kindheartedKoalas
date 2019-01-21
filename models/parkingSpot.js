@@ -16,12 +16,10 @@ module.exports = function(sequelize, DataTypes) {
     parkingSpot.hasOne(models.lease, {
       onDelete: 'cascade'
     })
+    
+
   }
 
-  parkingSpot.associate = function(models){
-    parkingSpot.hasOne(models.address, {
-      onDelete: 'cascade'
-    })
-  }
+  
   return parkingSpot;
 };
