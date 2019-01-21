@@ -17,5 +17,11 @@ module.exports = function(sequelize, DataTypes) {
       onDelete: 'cascade'
     })
   }
+
+  parkingSpot.associate = function(models){
+    parkingSpot.hasOne(models.address, {
+      onDelete: 'cascade'
+    })
+  }
   return parkingSpot;
 };
