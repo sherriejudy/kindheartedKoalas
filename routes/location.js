@@ -41,6 +41,10 @@ $(document).ready(function(){
                     types: ['cafe']
                 };
                 service.nearbySearch(request, callback);
+
+                console.log(request);
+                console.log(callback);
+                console.log("working");
             })
 
         }

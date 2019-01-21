@@ -21,14 +21,16 @@
         <script src="https://code.jquery.com/jquery.js"></script>
 
         <!-- JavaScript File -->
-        <script src="./routes/javascript/location.js"></script>
+        <script src="./routes/location.js"></script>
 
         <!-- Google Maps link-->
-        <script src="https://maps.googleapis.com/maps/api/js?libraries=place?key=AIzaSyB5oSHlknjP327ijOqPIS-VAI7tLQUlL3U&q=in+Toronto"></script>
+        <!-- <script src="https://maps.googleapis.com/maps/api/js?libraries=place?key=AIzaSyB5oSHlknjP327ijOqPIS-VAI7tLQUlL3U&q=in+Toronto"></script> -->
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5oSHlknjP327ijOqPIS-VAI7tLQUlL3U&callback=initMap"
+        type="text/javascript"></script>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+        <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
 
-        <!-- favicon -->
-        <link rel="shortcut icon" href="./assets/images/coffeeCupgold.ico" type="image/x-icon" />
-
+    
     </head>
 
     <body>
@@ -42,10 +44,14 @@
             </div>
         </div>
         
-<style>
-#coffee-map {
-            height: 500px;
-            width: 40%;
-            color: #39302A;
-        }
-</style>
+    <style>
+    #coffee-map {
+                height: 500px;
+                width: 40%;
+                color: #39302A;
+            }
+    </style>
+
+</body>
+</html>
+
