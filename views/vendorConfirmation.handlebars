@@ -1,0 +1,84 @@
+{{!-- lease details
+time duration
+lease terms
+rate $
+rate units
+--}}
+{{!-- parking spot details
+address
+image reference
+region
+spot size
+--}}
+{{!-- contact info
+name
+email
+--}}
+<h1>Confirmation for Vendor!</h1>
+
+<form class="create-form" action="" method="post">
+
+
+    <div class="form-group">
+
+        <h1>Lease Details</h1>
+        <ul>
+            <p>Time Duration:
+                {{#each }}
+                <p>{{}}</p>
+                {{/each}}
+            </p>
+            <p>Lease terms:
+                {{#each }}
+                <p>{{}}</p>
+                {{/each}}
+            </p>
+            <p>Rate($):
+                {{#each }}
+                <p>{{}}</p>
+                {{/each}}
+            </p>
+            <p>Rate (units):
+                {{#each }}
+                <p>{{}}</p>
+                {{/each}}
+            </p>
+        </ul>
+        <h1>Parking spot details </h1>
+        <ul>
+            <p> Address:
+                {{#each }}
+                <p>{{}}</p>
+                {{/each}}
+            </p>
+            <p>Image reference:
+                {{#each }}
+                <p>{{}}</p>
+                {{/each}}
+            </p>
+            <p>Region:
+                {{#each }}
+                <p>{{}}</p>
+                {{/each}}
+            </p>
+            <p>Spot size:
+                {{#each }}
+                <p>{{}}</p>
+                {{/each}}
+            </p>
+        </ul>
+        <h1>Contact info </h1>
+        <ul>
+            <p> Name:
+                {{#each }}
+                <p>{{}}</p>
+                {{/each}}
+            </p>
+            <p>Email:
+                {{#each }}
+                <p>{{}}</p>
+                {{/each}}
+            </p>
+        </ul>
+    </div>
+</form>
