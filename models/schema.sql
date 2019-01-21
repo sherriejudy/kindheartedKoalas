@@ -1,5 +1,6 @@
-DROP DATABASE IF EXISTS exampledb;
-CREATE DATABASE exampledb;
-
-DROP DATABASE IF EXISTS testdb;
-CREATE DATABASE testdb;
+-- run this to refresh database
+drop table parkingSpots; 
+drop table leases;
+-- create fake data 
+insert into parkingSpots VALUES (null, '123 easy street', 'testImgURL', 100.25, true, 'some parking spot', current_timestamp(), current_timestamp());
+insert into leases VALUES (null, 'Kevin', 'Major', current_timestamp(), current_timestamp(), '12', 100.15, current_timestamp(), current_timestamp(), 1);
