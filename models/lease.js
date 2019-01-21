@@ -22,6 +22,9 @@ module.exports = function(sequelize, DataTypes) {
         allowNull: false 
       }
     })
+    lease.hasOne(models.address, {
+      onDelete: 'cascade'
+    })
   }
   return lease;
 };
