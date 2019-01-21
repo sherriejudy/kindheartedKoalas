@@ -1,13 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
   var parkingSpot = sequelize.define("parkingSpot", {
-    image_reference: DataTypes.STRING,
-    rate_dollar: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [1]
-      }
-    },
+    image_url: DataTypes.STRING,
     isAvailable: DataTypes.BOOLEAN,
     spot_desription: DataTypes.STRING
   });
