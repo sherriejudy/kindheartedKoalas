@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "password",
+    "password": "12345678",
     "database": "kPark",
     "host": "localhost",
     "dialect": "mysql"
