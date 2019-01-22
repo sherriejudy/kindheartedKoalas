@@ -1,9 +1,26 @@
 <div class="container">
-
+  <div class="row">
+    <div class="col"
+  </div>
   <ul>
     {{#each parkingSpots}}
     <li>
-      {{this.address}}
+      {{this.address.unit}} {{this.address.street_number}} {{this.address.street_name}} {{this.address.city}}
+      {{this.address.postal_code}}
+      <ul>
+        <li>
+          {{this.lease.first_name_leasor}} {{this.lease.last_name_leasor}}
+        </li>
+        <li>
+         <b>FROM: </b> {{this.lease.from_date}} <b>TO: </b>{{this.lease.to_date}}
+        </li>
+        <li>
+          <b>Price: </b>${{this.lease.price}}
+        </li>
+        <li>
+          <b>Payment Frequency: </b>{{pmtFrq this.lease.pmt_frq}}
+        </li>
+      </ul>
     </li>
     {{/each}}
   </ul>
