@@ -1,19 +1,19 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <ul>
+      <ul class="list-group">
         {{#each parkingSpots}}
-        <li>
+        <li class="list-group-item">
           {{this.address.unit}} {{this.address.street_number}} {{this.address.street_name}} {{this.address.city}}
           {{this.address.postal_code}}
-          <ul>
-            <li>
+          <ul class="list-group">
+            <li class="list-group-item">
               {{this.lease.first_name_leasor}} {{this.lease.last_name_leasor}}
             </li>
-            <li>
+            <li class="list-group-item">
               <b>FROM: </b> {{this.lease.from_date}} <b>TO: </b>{{this.lease.to_date}}
             </li>
-            <li>
+            <li class="list-group-item">
               <b>Price: </b>${{this.lease.price}}
             </li>
             <li>
