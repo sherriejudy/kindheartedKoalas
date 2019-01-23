@@ -17,7 +17,7 @@ module.exports = function (app) {
   
 
   app.get("/api/geocode", function(req,res){
-    geo.find('7 Edmund Ave Toronto ON', function (err, response) {
+    geo.find(req.query.address, function (err, response) {
       res.json(response[0].location)    //an object {lat: something, lng: somethingElse} is returned
     })
     
