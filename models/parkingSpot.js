@@ -2,7 +2,9 @@ module.exports = function(sequelize, DataTypes) {
   var parkingSpot = sequelize.define("parkingSpot", {
     image_url: DataTypes.STRING,
     isAvailable: DataTypes.BOOLEAN,
-    spot_desription: DataTypes.STRING
+    spot_desription: DataTypes.STRING,
+    lng: DataTypes.FLOAT,
+    lat: DataTypes.FLOAT
   });
 
   parkingSpot.associate = function(models){

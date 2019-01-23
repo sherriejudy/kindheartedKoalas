@@ -1,11 +1,14 @@
 var db = require("../models");
+var request = require('request')
 
 module.exports = function(app) {
   
 
   // Get all examples
   app.get("/api/fullList", function(req, res) {
-    
+    request.get('test',{
+      json: true 
+    })
   });
 
   // Create a new example
