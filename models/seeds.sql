@@ -1,3 +1,4 @@
+ -- create fake data 
 insert into parkingSpots VALUES (null, 'testImgURL', true, 'some parking spot', current_timestamp(), current_timestamp());
 insert into leases VALUES (null, 'Kevin', 'Major', current_timestamp(), current_timestamp(), '12', 100.15, current_timestamp(), current_timestamp(), 1);
 insert into addresses VALUES (null, 'parkingSpot', '5A', '100', 'Edmund Ave', 'NW', 'TORONTO', 'M4V 1H2', current_timestamp(), current_timestamp(), 1, null);
