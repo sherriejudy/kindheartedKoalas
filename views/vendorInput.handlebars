@@ -4,45 +4,40 @@
 
 <h1>Vendor fill out details!</h1>
 
-<form class="create-form" action="/api/fullList" method="post">
+<form class="create-form" action="/api/submitVendor" method="post">
     <div class="form-group">
         <h1>Enter Lease details</h1>
         <ul>
             <h2>Time duration of Parking Spot Lease (to)</h2>
-            <input type="text" id="ca" name="name">
+            <input type="text" name="to">
             <h2>Time duration of Parking Spot Lease (from)</h2>
-            <input type="text" id="ca" name="name">
+            <input type="text" name="from">
             <h2>Price ($)</h2>
-            <input type="text" id="ca" name="name">
+            <input type="text" name="price">
             <h2>Payment frequency</h2>
-            <input type="text" id="ca" name="name">
+            <input type="text" name="frequency">
         </ul>
         <h1>Enter parking spot details </h1>
         <ul>
             <h2>Parking Spot Unit</h2>
-            <input type="text" id="ca" name="name" placeholder="Unit">
+            <input type="text" name="unit" placeholder="Unit">
             <h2>Parking Spot Street Number</h2>
-            <input type="text" id="ca" name="name" placeholder="Streetnumber">
+            <input type="text" name="streetNum" placeholder="Streetnumber">
             <h2>Parking Spot Street Name</h2>
-            <input type="text" id="ca" name="name" placeholder="Streetname">
+            <input type="text" name="streetName" placeholder="Streetname">
             <h2>City</h2>
-            <input type="text" id="ca" name="name">
+            <input type="text" name="city">
             <h2>Postal Code</h2>
-            <input type="text" id="ca" name="name">
-
+            <input type="text" name="postalCode">
         </ul>
-
         <h1>About Yourself </h1>
-
         <ul>
             <h2>First Name</h2>
-            <input type="text" id="ca" name="first_name">
+            <input type="text" name="firstName">
             <h2>Last Name</h2>
-            <input type="text" id="ca" name="last_name">
+            <input type="text" name="lastName">
         </ul>
-
         <button type="submit">Confirm your Parking Spot Rental</button>
     </div>
-
-
 </form>
+<script src="../js/vendorInput.js"></script>

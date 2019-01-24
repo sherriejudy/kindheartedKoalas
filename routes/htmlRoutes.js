@@ -20,7 +20,7 @@ module.exports = function (app) {
       })
   })
   // Load index page
-  app.get("/judy", function (req, res) {
+  app.get("/vendorInput", function (req, res) {
     res.render("vendorInput")
   })
 
