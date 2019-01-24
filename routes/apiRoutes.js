@@ -6,31 +6,23 @@ var geo = geocoder({
 });
 
 module.exports = function (app) {
-
-  app.post('/api/submitVendor', function (req, res) {
-    var data = req.body
-    // Put data into the database through db
-  })
-
-  
-
-    
-
-    
-
-  
-
+  // api to retrive long and lat of an address
   app.get("/api/geocode", function(req,res){
     geo.find(req.query.address, function (err, response) {
       res.json(response[0].location)    //an object {lat: something, lng: somethingElse} is returned
     })
   })
 
-  // Get all examples
-  app.get("/api/fullList", function (req, res) {
-    request.get('test', {
-      json: true
+  // Get a specific parking spot 
+  app.get("/api/findSpot/:id", function (req, res) {
+    console.log(req.params.id)
+    db.parkingSpot.findById(req.params.id, {
+      include: [db.lease, db.address]
     })
+    .then(function(spotSelected){
+      res.json(spotSelected)
+    })
+    
   });
 
   // Create a new example
