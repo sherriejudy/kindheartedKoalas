@@ -2,63 +2,68 @@
 {{!-- enter parking spot details --}}
 {{!-- about yourself --}}
 
-<h1>Vendor fill out details!</h1>
-
-
-<form class="create-form" action="/api/burgers" method="post">
-
-
-    <div class="form-group">
-        <h1>Enter Lease details</h1>
-        <ul>
-            <h2>Time duration of Parking Spot Lease</h2>
-            <input type="text" id="ca" name="name">
-            <button type="submit">Submit</button>
-            <h2>Lease terms</h2>
-            <input type="text" id="ca" name="name">
-            <button type="submit">Submit</button>
-            <h2>Rate ($)</h2>
-            <input type="text" id="ca" name="name">
-            <button type="submit">Submit</button>
-            <h2>Rate units</h2>
-            <input type="text" id="ca" name="name">
-            <button type="submit">Submit</button>
-        </ul>
-</form>
-<form class="create-form" action="/api/burgers" method="post">
-    <h1>Enter parking spot details </h1>
-    <ul>
-        <h2>Parking Spot Address</h2>
-        <input type="text" id="ca" name="name">
-        <button type="submit">Submit</button>
-        <h2>Image reference</h2>
-        <input type="text" id="ca" name="name">
-        <button type="submit">Submit</button>
-        <h2>Region</h2>
-        <input type="text" id="ca" name="name">
-        <button type="submit">Submit</button>
-        <h2>Spot size</h2>
-        <input type="text" id="ca" name="name">
-        <button type="submit">Submit</button>
-    </ul>
-</form>
-<form class="create-form" action="/api/burgers" method="post">
-    <h1>About Yourself </h1>
-
-    <ul>
-        <h2>First Name</h2>
-        <input type="text" id="ca" name="name">
-        <button type="submit">Submit</button>
-        <h2>Last Name</h2>
-        <input type="text" id="ca" name="name">
-        <button type="submit">Submit</button>
-        <h2>Email Address</h2>
-        <input type="text" id="ca" name="name">
-        <button type="submit">Submit</button>
-    </ul>
-
-    <button type="submit">Confirm your Parking Spot Rental</button>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>Vendor fill out details!</h1>
+        </div>
     </div>
 
+    <div class="row">
+        <form class="create-form" action="/api/submitVendor" method="post">
+            <div class="form-group">
 
-</form>
+                <div class="col">
+                    <ul class="list-group">
+                        <li class="list-group-item mb-2 border border-primary">
+                            <h3>Enter Lease details</h3>
+                            <h5>Time duration of Parking Spot Lease (To)</h5>
+                            <input type="text" name="to">
+                            <h5>Time duration of Parking Spot Lease (From)</h5>
+                            <input type="text" name="from">
+                            <h5>Price ($)</h5>
+                            <input type="text" name="price">
+                            <h5>Payment frequency (Weekly/Monthly)</h5>
+                            <input type="text" name="frequency">
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col">
+                    <ul class="list-group">
+                        <li class="list-group-item mb-2 border border-primary">
+                            <h3>Enter parking spot details </h3>
+                            <h5>Parking Spot Unit</h5>
+                            <input type="text" name="unit">
+                            <h5>Parking Spot Street Number</h5>
+                            <input type="text" name="streetNum">
+                            <h5>Parking Spot Street Name</h5>
+                            <input type="text" name="streetName">
+                            <h5>City</h5>
+                            <input type="text" name="city">
+                            <h5>Postal Code</h5>
+                            <input type="text" name="postalCode">
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col">
+                    <ul class="list-group">
+                        <li class="list-group-item mb-2 border border-primary">
+                            <h3>About Yourself </h3>
+                            <h5>First Name</h5>
+                            <input type="text" name="firstName">
+                            <h5>Last Name</h5>
+                            <input type="text" name="lastName">
+                        </li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <button type="submit">Confirm your Parking Spot Rental</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+<script src="../js/vendorInput.js"></script>
