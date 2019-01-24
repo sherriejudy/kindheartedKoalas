@@ -33,9 +33,15 @@ module.exports = function (app) {
     })
   });
 
-  // Create a new example
-  app.post("/api/examples", function (req, res) {
-    db.Example.create(req.body).then(function (dbExample) {
+  // post to db (new vendor spot)
+  app.post("/api/newSpot", function (req, res) {
+    db.parkingSpot.create({
+      image_url: req.body.imgUrl,
+      isAvailable: req.body.isAvailable,
+      spot_description: req.body.spotDescription,
+      lng: req.body.longitude,
+      lat: req.body.latitude
+    }).then(function (newSpot) {
       res.json(dbExample);
     });
   });
