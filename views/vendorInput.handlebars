@@ -4,60 +4,44 @@
 
 <h1>Vendor fill out details!</h1>
 
-
-<form class="create-form" action="/api/burgers" method="post">
-
-
+<form class="create-form" action="/api/fullList" method="post">
     <div class="form-group">
         <h1>Enter Lease details</h1>
         <ul>
-            <h2>Time duration of Parking Spot Lease</h2>
+            <h2>Time duration of Parking Spot Lease (to)</h2>
             <input type="text" id="ca" name="name">
-            <button type="submit">Submit</button>
-            <h2>Lease terms</h2>
+            <h2>Time duration of Parking Spot Lease (from)</h2>
             <input type="text" id="ca" name="name">
-            <button type="submit">Submit</button>
-            <h2>Rate ($)</h2>
+            <h2>Price ($)</h2>
             <input type="text" id="ca" name="name">
-            <button type="submit">Submit</button>
-            <h2>Rate units</h2>
+            <h2>Payment frequency</h2>
             <input type="text" id="ca" name="name">
-            <button type="submit">Submit</button>
         </ul>
-</form>
-<form class="create-form" action="/api/burgers" method="post">
-    <h1>Enter parking spot details </h1>
-    <ul>
-        <h2>Parking Spot Address</h2>
-        <input type="text" id="ca" name="name">
-        <button type="submit">Submit</button>
-        <h2>Image reference</h2>
-        <input type="text" id="ca" name="name">
-        <button type="submit">Submit</button>
-        <h2>Region</h2>
-        <input type="text" id="ca" name="name">
-        <button type="submit">Submit</button>
-        <h2>Spot size</h2>
-        <input type="text" id="ca" name="name">
-        <button type="submit">Submit</button>
-    </ul>
-</form>
-<form class="create-form" action="/api/burgers" method="post">
-    <h1>About Yourself </h1>
+        <h1>Enter parking spot details </h1>
+        <ul>
+            <h2>Parking Spot Unit</h2>
+            <input type="text" id="ca" name="name" placeholder="Unit">
+            <h2>Parking Spot Street Number</h2>
+            <input type="text" id="ca" name="name" placeholder="Streetnumber">
+            <h2>Parking Spot Street Name</h2>
+            <input type="text" id="ca" name="name" placeholder="Streetname">
+            <h2>City</h2>
+            <input type="text" id="ca" name="name">
+            <h2>Postal Code</h2>
+            <input type="text" id="ca" name="name">
 
-    <ul>
-        <h2>First Name</h2>
-        <input type="text" id="ca" name="name">
-        <button type="submit">Submit</button>
-        <h2>Last Name</h2>
-        <input type="text" id="ca" name="name">
-        <button type="submit">Submit</button>
-        <h2>Email Address</h2>
-        <input type="text" id="ca" name="name">
-        <button type="submit">Submit</button>
-    </ul>
+        </ul>
 
-    <button type="submit">Confirm your Parking Spot Rental</button>
+        <h1>About Yourself </h1>
+
+        <ul>
+            <h2>First Name</h2>
+            <input type="text" id="ca" name="first_name">
+            <h2>Last Name</h2>
+            <input type="text" id="ca" name="last_name">
+        </ul>
+
+        <button type="submit">Confirm your Parking Spot Rental</button>
     </div>
 
 

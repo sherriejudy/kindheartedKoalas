@@ -2,25 +2,24 @@ var db = require("../models");
 var request = require('request');
 var geocoder = require('google-geocoder');
 var geo = geocoder({
-  key:'AIzaSyB5oSHlknjP327ijOqPIS-VAI7tLQUlL3U'
+  key: 'AIzaSyB5oSHlknjP327ijOqPIS-VAI7tLQUlL3U'
 });
 
 module.exports = function (app) {
 
 
-  
 
-    
 
-    
 
-  
 
-  app.get("/api/geocode", function(req,res){
+
+
+
+
+  app.get("/api/geocode", function (req, res) {
     geo.find('7 Edmund Ave Toronto ON', function (err, response) {
       res.json(response[0].location)    //an object {lat: something, lng: somethingElse} is returned
     })
-    
   })
 
 
