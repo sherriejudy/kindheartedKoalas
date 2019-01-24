@@ -25,7 +25,7 @@ module.exports = function (app) {
     
   });
 
-  // post to db (new vendor spot)
+  // post to db (adds a parkingSpot, a lease, and an address
   app.post("/api/newSpot", function (req, res) {
     db.parkingSpot.create({
       image_url: req.body.imgUrl,
