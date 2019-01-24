@@ -42,7 +42,7 @@ module.exports = function (app) {
       lng: req.body.longitude,
       lat: req.body.latitude
     }).then(function (newSpot) {
-      res.json(dbExample);
+      res.json(newSpot);
     });
   });
 
