@@ -1,3 +1,7 @@
+<div class="map">
+
+</div>
+
 <div class="container">
   <div class="row">
     <div class="col">
@@ -10,18 +14,18 @@
         {{#each parkingSpots}}
         <li class="list-group-item mb-2 border border-primary">
           <h5>
-          {{this.address.unit}}-{{this.address.street_number}} {{this.address.street_name}}
-          <br>
-          {{this.address.city}}
-          <br>
-          {{this.address.postal_code}}
+            {{this.address.unit}}-{{this.address.street_number}} {{this.address.street_name}}
+            <br>
+            {{this.address.city}}
+            <br>
+            {{this.address.postal_code}}
           </h5>
           <ul class="list-group list-group-flush">
             <li class="list-group-item p-1">
-            <b>Leasor:</b> {{this.lease.first_name_leasor}} {{this.lease.last_name_leasor}}
+              <b>Leasor:</b> {{this.lease.first_name_leasor}} {{this.lease.last_name_leasor}}
             </li>
             <li class="list-group-item p-1">
-              <b>FROM: </b> {{this.lease.from_date}} 
+              <b>FROM: </b> {{this.lease.from_date}}
             </li>
             <li class="list-group-item p-1">
               <b>TO: </b>{{this.lease.to_date}}
