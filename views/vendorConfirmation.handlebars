@@ -1,84 +1,78 @@
-{{!-- lease details
-time duration
-lease terms
-rate $
-rate units
---}}
-{{!-- parking spot details
-address
-image reference
-region
-spot size
---}}
-{{!-- contact info
-name
-email
---}}
-<h1>Confirmation for Vendor!</h1>
+<div class="container">
+    <h1>Confirmation for Vendor!</h1>
 
-<form class="create-form" action="" method="post">
+    <form class="create-form" action="" method="post">
 
 
-    <div class="form-group">
+        <div class="form-group">
+            <div class="row">
+                <div class="col">
+                    <ul class="list-group">
+                        <li class="list-group-item mb-2 border border-primary">
 
-        <h1>Lease Details</h1>
-        <ul>
-            <p>Time Duration:
-                {{#each parkingSpots}}
-                <p>{{}}</p>
-                {{/each}}
-            </p>
-            <p>Lease terms:
-                {{#each }}
-                <p>{{}}</p>
-                {{/each}}
-            </p>
-            <p>Rate($):
-                {{#each }}
-                <p>{{}}</p>
-                {{/each}}
-            </p>
-            <p>Rate (units):
-                {{#each }}
-                <p>{{}}</p>
-                {{/each}}
-            </p>
-        </ul>
-        <h1>Parking spot details </h1>
-        <ul>
-            <p> Address:
-                {{#each }}
-                <p>{{}}</p>
-                {{/each}}
-            </p>
-            <p>Image reference:
-                {{#each }}
-                <p>{{}}</p>
-                {{/each}}
-            </p>
-            <p>Region:
-                {{#each }}
-                <p>{{}}</p>
-                {{/each}}
-            </p>
-            <p>Spot size:
-                {{#each }}
-                <p>{{}}</p>
-                {{/each}}
-            </p>
-        </ul>
-        <h1>Contact info </h1>
-        <ul>
-            <p> Name:
-                {{#each }}
-                <p>{{}}</p>
-                {{/each}}
-            </p>
-            <p>Email:
-                {{#each }}
-                <p>{{}}</p>
-                {{/each}}
-            </p>
-        </ul>
-    </div>
-</form>
+                            <h3>Lease Details</h3>
+                            <h5>Time Duration:
+                                {{#each parkingSpots}}
+                                <h5>{{}}</h5>
+                                {{/each}}
+                            </h5>
+                            <h5>Price ($):
+                                {{#each }}
+                                <h5>{{}}</h5>
+                                {{/each}}
+                            </h5>
+                            <h5>Payment frequency (Weekly/Monthly):
+                                {{#each }}
+                                <h5>{{}}</h5>
+                                {{/each}}
+                            </h5>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <ul class="list-group">
+                        <li class="list-group-item mb-2 border border-primary">
+
+                            <h3>Parking spot details </h3>
+                            <h5> Unit:
+                                {{#each }}
+                                <h5>{{}}</h5>
+                                {{/each}}
+                            </h5>
+                            <h5>Address:
+                                {{#each }}
+                                <h5>{{}}</h5>
+                                {{/each}}
+                            </h5>
+                            <h5>City:
+                                {{#each }}
+                                <h5>{{}}</h5>
+                                {{/each}}
+                            </h5>
+                            <h5>Postal Code:
+                                {{#each }}
+                                <h5>{{}}</h5>
+                                {{/each}}
+                            </h5>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col">
+                    <ul class="list-group">
+                        <li class="list-group-item mb-2 border border-primary">
+                            <h3>Contact info </h3>
+                            <h5> Name:
+                                {{#each }}
+                                <h5>{{}}</h5>
+                                {{/each}}
+                            </h5>
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </form>
+
+</div>
