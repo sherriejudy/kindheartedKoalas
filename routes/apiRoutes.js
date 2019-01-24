@@ -7,22 +7,12 @@ var geo = geocoder({
 
 module.exports = function (app) {
 
-
-  
-
-    
-
-    
-
-  
-
   app.get("/api/geocode", function(req,res){
     geo.find(req.query.address, function (err, response) {
       res.json(response[0].location)    //an object {lat: something, lng: somethingElse} is returned
     })
     
   })
-
 
   // Get all examples
   app.get("/api/fullList", function (req, res) {
@@ -33,8 +23,7 @@ module.exports = function (app) {
 
   // Create a new example
   app.post("/api/examples", function (req, res) {
-    db.Example.create(req.body).then(function (dbExample) {
-      res.json(dbExample);
+    
     });
   });
 
