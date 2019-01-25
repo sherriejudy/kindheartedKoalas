@@ -2,6 +2,7 @@ var db = require("../models");
 
 module.exports = function (app) {
 // render html page that displays single listing 
+
 app.get("/api/findSpot/:id", function (req, res) {
   console.log(req.params.id)
   db.parkingSpot.findById(req.params.id, {
