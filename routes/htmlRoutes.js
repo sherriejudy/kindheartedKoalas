@@ -8,9 +8,9 @@ module.exports = function (app) {
     db.parkingSpot.findById(req.params.id, {
       include: [db.lease, db.address]
     })
-      .then(function (spotSelected) {
+      .then(function (parkingSpot) {
         res.render('spotDetail',
-          { spotSelected: spotSelected,
+          { parkingSpot: parkingSpot,
           layout: 'mainmap' });
       });
 
