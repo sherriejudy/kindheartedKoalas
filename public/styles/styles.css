@@ -2,7 +2,20 @@
   line-height: 2.5;
 }
 
+
+.imgNav{
+height:20px;
+width: 80px;
+}
+.choice{
+  font-family: 'Major Mono Display', monospace;
+  font-size: 50px;
+  color: orange;
+  text-align: center;
+}
+
 #map {
   height: 400px;  /* The height is 400 pixels */
   width: 100%;  /* The width is the width of the web page */
  }
+
