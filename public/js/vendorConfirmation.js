@@ -1,11 +1,10 @@
 // Use an API call to get the confirmation
 // Populate the page using that information
 
-$.ajax('http://localhost:3000/vendorInput', {
-    type: 'POST',
+$.ajax('http://localhost:3000/vendorConfirmation', {
+    type: 'GET',
     data: JSON.stringify({
-        leaseDetails: leaseDetails,
-        parkingSpotDetails: parkingSpotDetails,
+        id: id,
         aboutYourself: aboutYourself
     }),
     contentType: 'application/json',
