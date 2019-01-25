@@ -40,7 +40,11 @@ $(".create-form").submit(function (event) {
             aboutYourself: aboutYourself
         }),
         contentType: 'application/json',
-        success: function () { console.log('success'); },
+        success: function () {
+            console.log('success');
+            // Redirect
+            window.location.href = "/vendorConfirmation?id=" + 5;
+        },
         error: function () { console.log('error'); }
     });
 

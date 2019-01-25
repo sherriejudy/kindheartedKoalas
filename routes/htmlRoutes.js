@@ -38,6 +38,10 @@ module.exports = function (app) {
     res.render("vendorInput");
   })
 
+  app.get("/vendorConfirmation", function (req, res) {
+    res.render("vendorConfirmation");
+  })
+
   // Render 404 page for any unmatched routes
   app.get("*", function (req, res) {
     res.render("404");
