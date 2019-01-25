@@ -1,0 +1,71 @@
+{{!-- enter lease details --}}
+{{!-- enter parking spot details --}}
+{{!-- about yourself --}}
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>Vendor fill out details!</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <form class="create-form" method="post">
+            <div class="form-group">
+
+                <div class="col">
+                    <ul class="list-group">
+                        <li class="list-group-item mb-2 border border-primary">
+                            <h3>Enter Lease details</h3>
+                            <h5>Time duration of Parking Spot Lease (To)</h5>
+                            <input type="text" name="to" value="2019-01-01 00:00:00">
+                            <h5>Time duration of Parking Spot Lease (From)</h5>
+                            <input type="text" name="from" value="2019-01-01 00:00:20">
+                            <h5>Price ($)</h5>
+                            <input type="text" name="price" value="30">
+                            <h5>Payment frequency (Weekly/Monthly)</h5>
+                            <input type="text" name="frequency" value="weekly">
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col">
+                    <ul class="list-group">
+                        <li class="list-group-item mb-2 border border-primary">
+                            <h3>Enter parking spot details </h3>
+                            <h5>Parking Spot Unit</h5>
+                            <input type="text" name="unit" value="7A">
+                            <h5>Parking Spot Street Number</h5>
+                            <input type="text" name="streetNum" value="24">
+                            <h5>Parking Spot Street Name</h5>
+                            <input type="text" name="streetName" value="Elm Street">
+                            <h5>City</h5>
+                            <input type="text" name="city" value="Toronto">
+                            <h5>Postal Code</h5>
+                            <input type="text" name="postalCode" value="M1W 2J2">
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col">
+                    <ul class="list-group">
+                        <li class="list-group-item mb-2 border border-primary">
+                            <h3>About Yourself </h3>
+                            <h5>First Name</h5>
+                            <input type="text" name="firstName" value="Judy">
+                            <h5>Last Name</h5>
+                            <input type="text" name="lastName" value="Hu">
+                        </li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <button type="submit" id="button">Confirm your Parking Spot Rental</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+<script src="../js/vendorInput.js"></script>

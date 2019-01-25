@@ -1,0 +1,45 @@
+<div class="map goes here"></div>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>Available Parking Spots</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <ul class="list-group">
+        {{#each parkingSpots}}
+        <li class="list-group-item mb-2 border border-primary">
+          <a href="/findSpot/{{this.id}}">
+           <h5>
+            {{this.address.unit}}-{{this.address.street_number}} {{this.address.street_name}}
+            <br>
+            {{this.address.city}}
+            <br>
+            {{this.address.postal_code}}
+          </h5>
+          </a>
+         
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item p-1">
+              <b>Leasor:</b> {{this.lease.first_name_leasor}} {{this.lease.last_name_leasor}}
+            </li>
+            <li class="list-group-item p-1">
+              <b>FROM: </b> {{this.lease.from_date}}
+            </li>
+            <li class="list-group-item p-1">
+              <b>TO: </b>{{this.lease.to_date}}
+            </li>
+            <li class="list-group-item p-1">
+              <b>Price: </b>${{this.lease.price}}
+            </li>
+            <li class="list-group-item p-1">
+              <b>Payment Frequency: </b>{{pmtFrq this.lease.pmt_frq}}
+            </li>
+          </ul>
+        </li>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+</div>

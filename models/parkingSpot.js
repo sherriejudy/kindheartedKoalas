@@ -1,7 +1,24 @@
 module.exports = function(sequelize, DataTypes) {
   var parkingSpot = sequelize.define("parkingSpot", {
-    text: DataTypes.STRING,
-    description: DataTypes.TEXT
+    image_url: DataTypes.STRING,
+    isAvailable: DataTypes.BOOLEAN,
+    spot_description: DataTypes.STRING,
+    lng: DataTypes.FLOAT,
+    lat: DataTypes.FLOAT
   });
+
+  parkingSpot.associate = function(models){
+    parkingSpot.hasOne(models.lease, {
+      onDelete: 'cascade'
+    })
+
+    parkingSpot.hasOne(models.address, {
+      onDelete: 'cascade'
+    })
+    
+
+  }
+
+  
   return parkingSpot;
 };
