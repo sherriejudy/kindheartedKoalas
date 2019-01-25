@@ -30,8 +30,8 @@ $(".create-form").submit(function (event) {
         lastName: formInputs[10].value
 
     }
-    console.log(JSON.stringify({leaseDetails: leaseDetails, parkingSpotDetails: parkingSpotDetails, aboutYourself: aboutYourself}))
 
+    console.log(JSON.stringify({leaseDetails: leaseDetails, parkingSpotDetails: parkingSpotDetails, aboutYourself: aboutYourself}))
 
     $.ajax('http://localhost:3000/vendorInput', {
         type: 'POST',
