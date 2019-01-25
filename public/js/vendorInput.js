@@ -40,12 +40,16 @@ $(".create-form").submit(function (event) {
             aboutYourself: aboutYourself
         }),
         contentType: 'application/json',
-        success: function() { console.log('success');},
-        error  : function() { console.log('error');}
-});
+        success: function () {
+            console.log('success');
+            // Redirect
+            window.location.href = "/vendorConfirmation?id=" + 5;
+        },
+        error: function () { console.log('error'); }
+    });
 
 
-console.log(JSON.stringify(leaseDetails)+"\n"+JSON.stringify(parkingSpotDetails)+" \n "+JSON.stringify(aboutYourself));
+    console.log(JSON.stringify(leaseDetails) + "\n" + JSON.stringify(parkingSpotDetails) + " \n " + JSON.stringify(aboutYourself));
 
 
 });

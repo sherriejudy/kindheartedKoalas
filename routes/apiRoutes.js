@@ -7,7 +7,7 @@ var geo = geocoder({
 
 module.exports = function (app) {
   // api to retrive long and lat of an address
-  app.get("/api/geocode", function(req,res){
+  app.get("/api/geocode", function (req, res) {
     geo.find(req.query.address, function (err, response) {
       res.json(response[0].location)    //an object {lat: something, lng: somethingElse} is returned
     })
@@ -19,10 +19,10 @@ module.exports = function (app) {
     db.parkingSpot.findById(req.params.id, {
       include: [db.lease, db.address]
     })
-    .then(function(spotSelected){
-      res.json(spotSelected)
-    })
-    
+      .then(function (spotSelected) {
+        res.json(spotSelected)
+      })
+
   });
 
   // post to db (adds a parkingSpot, a lease, and an address
@@ -41,21 +41,21 @@ module.exports = function (app) {
         pmt_freq: req.body.pmtFrq,
         price: req.body.price
 
+      },
+      address: {
+        address_type: req.body.addressType,
+        unit: req.body.unit,
+        street_number: req.body.streetNumber,
+        street_name: req.body.streetName,
+        street_dir: req.body.streetDir,
+        city: req.body.city,
+        postal_code: req.body.postalCode
+      }
+
     },
-    address: {
-      address_type: req.body.addressType,
-      unit: req.body.unit,
-      street_number: req.body.streetNumber,
-      street_name: req.body.streetName,
-      street_dir: req.body.streetDir,
-      city: req.body.city,
-      postal_code: req.body.postalCode
-    }
-      
-    },
-    {include: [db.lease,db.address]}).then(function (newSpot) {
-      res.json(newSpot);
-    });
+      { include: [db.lease, db.address] }).then(function (newSpot) {
+        res.json(newSpot);
+      });
   });
 
 
@@ -66,7 +66,7 @@ module.exports = function (app) {
   app.post("/vendorInput", function (req, res) {
 
     //var new = req.body;
-    
+
     db.parkingSpot.create({
       image_url: null,
       isAvailable: true,
@@ -81,22 +81,25 @@ module.exports = function (app) {
         pmt_freq: req.body.leaseDetails.paymentFrequency,
         price: req.body.leaseDetails.price
 
+      },
+      address: {
+        address_type: "parkingSpot",
+        unit: req.body.parkingSpotDetails.unit,
+        street_number: req.body.parkingSpotDetails.streetNumber,
+        street_name: req.body.parkingSpotDetails.streetName,
+        street_dir: null,
+        city: req.body.parkingSpotDetails.city,
+        postal_code: req.body.parkingSpotDetails.postalCode
+      }
+
     },
-    address: {
-      address_type: "parkingSpot",
-      unit: req.body.parkingSpotDetails.unit,
-      street_number: req.body.parkingSpotDetails.streetNumber,
-      street_name: req.body.parkingSpotDetails.streetName,
-      street_dir: null,
-      city: req.body.parkingSpotDetails.city,
-      postal_code: req.body.parkingSpotDetails.postalCode
-    }
-      
-    },
-    {include: [db.lease,db.address]}).then(function (newSpot) {
-      res.json(newSpot);
-    });
+      { include: [db.lease, db.address] }).then(function (newSpot) {
+        res.json(newSpot);
+      });
   });
 
-  
+  app.get("/vendorConfirmation", function (req, res) {
+
+  })
+
 };
