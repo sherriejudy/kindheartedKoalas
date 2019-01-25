@@ -58,46 +58,6 @@ module.exports = function (app) {
       });
   });
 
-
-
-
-
-
-  app.post("/vendorInput", function (req, res) {
-
-    //var new = req.body;
-
-    db.parkingSpot.create({
-      image_url: null,
-      isAvailable: true,
-      spot_description: null,
-      lng: null,
-      lat: null,
-      lease: {
-        first_name_leasor: req.body.aboutYourself.firstName,
-        last_name_leasor: req.body.aboutYourself.lastName,
-        from_date: req.body.leaseDetails.from,
-        to_date: req.body.leaseDetails.to,
-        pmt_freq: req.body.leaseDetails.paymentFrequency,
-        price: req.body.leaseDetails.price
-
-      },
-      address: {
-        address_type: "parkingSpot",
-        unit: req.body.parkingSpotDetails.unit,
-        street_number: req.body.parkingSpotDetails.streetNumber,
-        street_name: req.body.parkingSpotDetails.streetName,
-        street_dir: null,
-        city: req.body.parkingSpotDetails.city,
-        postal_code: req.body.parkingSpotDetails.postalCode
-      }
-
-    },
-      { include: [db.lease, db.address] }).then(function (newSpot) {
-        res.json(newSpot);
-      });
-  });
-
   app.get("/vendorConfirmation", function (req, res) {
 
   })
