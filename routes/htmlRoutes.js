@@ -9,8 +9,8 @@ app.get("/api/findSpot/:id", function (req, res) {
   })
   .then(function(spotSelected){
     res.render('index', 
-    {spotSelected: spotSelected})
-  })
+    {spotSelected: spotSelected});
+  });
   
 });
 
@@ -18,7 +18,7 @@ app.get("/api/findSpot/:id", function (req, res) {
   app.get("/map", function (req, res) {
     res.render("maptest", {
       layout: 'mainmap'
-    })
+    });
   })
   // Load index page
   app.get("/", function (req, res) {
@@ -29,17 +29,17 @@ app.get("/api/findSpot/:id", function (req, res) {
         res.render("spotListing", {
           msg: 'test',
           parkingSpots: data
-        })
-      })
+        });
+      });
   })
   // Load index page
   app.get("/vendorInput", function (req, res) {
-    res.render("vendorInput")
+    res.render("vendorInput");
   })
 
   // Render 404 page for any unmatched routes
   app.get("*", function (req, res) {
     res.render("404");
-    console.log('not found')
+    console.log('not found');
   });
 }
