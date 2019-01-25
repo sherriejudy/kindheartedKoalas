@@ -31,15 +31,17 @@ $(".create-form").submit(function (event) {
 
     }
 
-    console.log(JSON.stringify({leaseDetails: leaseDetails, parkingSpotDetails: parkingSpotDetails, aboutYourself: aboutYourself}))
+    var data = {
+        leaseDetails: leaseDetails,
+        parkingSpotDetails: parkingSpotDetails,
+        aboutYourself: aboutYourself
+    };
+
+    console.log(JSON.stringify(data));
 
     $.ajax('http://localhost:3000/vendorInput', {
         type: 'POST',
-        data: JSON.stringify({
-            leaseDetails: leaseDetails,
-            parkingSpotDetails: parkingSpotDetails,
-            aboutYourself: aboutYourself
-        }),
+        data: JSON.stringify(data),
         contentType: 'application/json',
         success: function () {
             console.log('success');
