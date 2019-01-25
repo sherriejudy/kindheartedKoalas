@@ -3,14 +3,15 @@ var db = require("../models");
 module.exports = function (app) {
   // render html page that displays single listing 
 
-  app.get("/api/findSpot/:id", function (req, res) {
+  app.get("/findSpot/:id", function (req, res) {
     console.log(req.params.id)
     db.parkingSpot.findById(req.params.id, {
       include: [db.lease, db.address]
     })
       .then(function (spotSelected) {
-        res.render('index',
-          { spotSelected: spotSelected });
+        res.render('spotDetail',
+          { spotSelected: spotSelected,
+          layout: 'mainmap' });
       });
 
   });
@@ -22,7 +23,7 @@ module.exports = function (app) {
     });
   })
   // Load index page
-  app.get("/spot", function (req, res) {
+  app.get("/", function (req, res) {
     db.parkingSpot.findAll({
       include: [db.address, db.lease]
     })
