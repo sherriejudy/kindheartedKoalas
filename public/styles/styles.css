@@ -1,3 +1,14 @@
 .list-group-item {
   line-height: 2.5;
 }
+
+.imgNav{
+height:20px;
+width: 80px;
+}
+.choice{
+  font-family: 'Major Mono Display', monospace;
+  font-size: 50px;
+  color: orange;
+  text-align: center;
+}
