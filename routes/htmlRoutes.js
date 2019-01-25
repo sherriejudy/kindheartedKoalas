@@ -2,17 +2,18 @@ var db = require("../models");
 
 module.exports = function (app) {
 // render html page that displays single listing 
-app.get("/api/findSpot/:id", function (req, res) {
-  console.log(req.params.id)
-  db.parkingSpot.findById(req.params.id, {
-    include: [db.lease, db.address]
-  })
-  .then(function(spotSelected){
-    res.render('index', 
-    {spotSelected: spotSelected})
-  })
-  
-});
+  app.get("/findSpot/:id", function (req, res) {
+    db.parkingSpot.findById(req.params.id, {
+      include: [db.lease, db.address]
+    })
+      .then(function (data) {
+        res.render('spotDetail',{
+          parkingSpot: data,
+          layout: 'mainmap'
+        })
+      })
+
+  });
 
   // test map route
   app.get("/map", function (req, res) {
