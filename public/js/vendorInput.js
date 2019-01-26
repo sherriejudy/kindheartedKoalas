@@ -28,6 +28,8 @@ $(".create-form").submit(function (event) {
 
     }
 
+
+
     var data = {
         leaseDetails: leaseDetails,
         parkingSpotDetails: parkingSpotDetails,
