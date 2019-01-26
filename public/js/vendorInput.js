@@ -1,5 +1,3 @@
-// var To = $("[name='to']");
-// console.log(To);
 
 $(".create-form").submit(function (event) {
 
@@ -36,58 +34,26 @@ $(".create-form").submit(function (event) {
         aboutYourself: aboutYourself
     };
 
-    var address = String(parkingSpotDetails.streetNumber)+" "+String(parkingSpotDetails.streetName)+" "+String(parkingSpotDetails.city);
 
-    // console.log(JSON.stringify({
-    //     leaseDetails: leaseDetails,
-    //     parkingSpotDetails: parkingSpotDetails,
-    //     aboutYourself: aboutYourself
-    // }));
 
     // adding geocode call
-    $.get('/api/geocode?address='+'5125 Celebration Dr, ON, Canada') //trying this instead of the var address temporarily
-    .then(function(data,err){
-        $.ajax('http://localhost:3000/vendorInput', {
+        $.ajax('/vendorInput', {
         type: 'POST',
         data: JSON.stringify({
             leaseDetails: leaseDetails,
             parkingSpotDetails: parkingSpotDetails,
             aboutYourself: aboutYourself
         }),
-        contentType: 'application/json',
-        success: function () {
-            console.log('success');
-            // Redirect
-            // window.location.href = "/vendorConfirmation";
-            // vendorConfirmation(data);
-
-
-            $.ajax('http://localhost:3000/vendorConfirmation', {  //trying this instead of the same call from vendorConfirmation(data) on line 62 to see if this will work 
-                type: 'GET',
-                data: JSON.stringify(data),
-                contentType: 'application/json',
-                success: function () {
-                    console.log('success');
-                    console.log("MEOWWWW   "+data);
-                    $(".container").text(data);
-                    // Redirect
-                    //window.location.href =;
-                },
-                error: function () { console.log('error'); }
-            });
-
-
-
-
-        },
-        error: function () { console.log('error'); }
-    });
+        contentType: 'application/json'
+    })
+    .then(function(data,err){
+        window.location.href='/vendorconf'
+    })
 
     });
     
 
-    //console.log(JSON.stringify(leaseDetails) + "\n" + JSON.stringify(parkingSpotDetails) + " \n " + JSON.stringify(aboutYourself));
 
 
-});
+
 
