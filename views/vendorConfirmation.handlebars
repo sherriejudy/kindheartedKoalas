@@ -12,18 +12,18 @@
 
                             <h3>Lease Details</h3>
                             <h5>Time Duration:
-                                {{#each parkingSpots}}
-                                <h5>{{}}</h5>
+                                {{#each data}}
+                                <h5>{{data.leaseDetails.to}}</h5>
                                 {{/each}}
                             </h5>
                             <h5>Price ($):
-                                {{#each }}
-                                <h5>{{}}</h5>
+                                {{#each data }}
+                                <h5>{{data.leaseDetails.to}}</h5>
                                 {{/each}}
                             </h5>
                             <h5>Payment frequency (Weekly/Monthly):
-                                {{#each }}
-                                <h5>{{}}</h5>
+                                {{#each data }}
+                                <h5>{{data.leaseDetails.to}}</h5>
                                 {{/each}}
                             </h5>
                         </li>
@@ -35,23 +35,23 @@
 
                             <h3>Parking spot details </h3>
                             <h5> Unit:
-                                {{#each }}
-                                <h5>{{}}</h5>
+                                {{#each data}}
+                                <h5>{{data.leaseDetails.to}}</h5>
                                 {{/each}}
                             </h5>
                             <h5>Address:
-                                {{#each }}
-                                <h5>{{}}</h5>
+                                {{#each data}}
+                                <h5>{{data.leaseDetails.to}}</h5>
                                 {{/each}}
                             </h5>
                             <h5>City:
-                                {{#each }}
-                                <h5>{{}}</h5>
+                                {{#each data}}
+                                <h5>{{data.leaseDetails.to}}</h5>
                                 {{/each}}
                             </h5>
                             <h5>Postal Code:
-                                {{#each }}
-                                <h5>{{}}</h5>
+                                {{#each data}}
+                                <h5>{{data.leaseDetails.to}}</h5>
                                 {{/each}}
                             </h5>
                         </li>
@@ -63,8 +63,8 @@
                         <li class="list-group-item mb-2 border border-primary">
                             <h3>Contact info </h3>
                             <h5> Name:
-                                {{#each }}
-                                <h5>{{}}</h5>
+                                {{#each data}}
+                                <h5>{{data.leaseDetails.to}}</h5>
                                 {{/each}}
                             </h5>
 
@@ -76,3 +76,4 @@
     </form>
 
 </div>
+<script src="../js/vendorConfirmation.js"></script>
