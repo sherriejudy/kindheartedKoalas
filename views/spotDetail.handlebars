@@ -1,7 +1,44 @@
-<h1>test</h1>
-<div id="map"></div>
-{{parkingSpot.address.unit}}
-{{parkingSpot.address.street_number}}
-{{parkingSpot.address.street_name}}
-{{parkingSpot.address.postal_code}}
-${{parkingSpot.lease.price}}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>Parking Spot Confirmation</h1>
+        </div>
+    </div>
+    <div id="map"></div>
+    <br>
+    <div class="col">
+        <ul class="list-group">
+            <li class="list-group-item mb-2 border border-primary">
+                <h5> {{parkingSpot.address.unit}} -
+                    {{parkingSpot.address.street_number}} {{parkingSpot.address.street_name}}</h5>
+                <h5> {{parkingSpot.address.city}}</h5>
+                <h5> {{parkingSpot.address.postal_code}}</h5>
+
+
+                <p></p>
+
+
+
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item p-1">
+                        <b>Leasor:</b> {{parkingSpot.lease.first_name_leasor}} {{parkingSpot.lease.last_name_leasor}}
+                    </li>
+                    <li class="list-group-item p-1">
+                        <b>FROM: </b> {{parkingSpot.lease.from_date}}
+                    </li>
+                    <li class="list-group-item p-1">
+                        <b>TO: </b>{{parkingSpot.lease.to_date}}
+                    </li>
+                    <li class="list-group-item p-1">
+                        <b>Price: </b>${{parkingSpot.lease.price}}
+                    </li>
+                    <li class="list-group-item p-1">
+                        <b>Payment Frequency: </b>{{pmtFrq parkingSpot.lease.pmt_frq}}
+                    </li>
+                </ul>
+
+
+            </li>
+        </ul>
+    </div>
+</div>
