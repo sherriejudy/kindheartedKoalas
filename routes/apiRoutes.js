@@ -95,6 +95,8 @@ module.exports = function (app) {
     },
       { include: [db.lease, db.address] }).then(function (newSpot) {
         res.json(newSpot);
+        console.log(newSpot);
+        res.render("vendorConfirmation");
       });
   });
 

@@ -1,6 +1,5 @@
 // Use an API call to get the confirmation
 // Populate the page using that information
-console.log("wtf");
 
 function vendorConfirmation(data){
 
