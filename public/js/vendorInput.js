@@ -1,9 +1,6 @@
 // var To = $("[name='to']");
 // console.log(To);
 
-
-
-
 $(".create-form").submit(function (event) {
 
     event.preventDefault();
@@ -31,7 +28,17 @@ $(".create-form").submit(function (event) {
 
     }
 
-    console.log(JSON.stringify({leaseDetails: leaseDetails, parkingSpotDetails: parkingSpotDetails, aboutYourself: aboutYourself}))
+    var data = {
+        leaseDetails: leaseDetails,
+        parkingSpotDetails: parkingSpotDetails,
+        aboutYourself: aboutYourself
+    };
+
+    console.log(JSON.stringify({
+        leaseDetails: leaseDetails,
+        parkingSpotDetails: parkingSpotDetails,
+        aboutYourself: aboutYourself
+    }));
 
     $.ajax('http://localhost:3000/vendorInput', {
         type: 'POST',
@@ -44,7 +51,8 @@ $(".create-form").submit(function (event) {
         success: function () {
             console.log('success');
             // Redirect
-            window.location.href = "/vendorConfirmation?id=" + 5;
+            window.location.href = "/vendorConfirmation";
+            vendorConfirmation(data);
         },
         error: function () { console.log('error'); }
     });
