@@ -3,6 +3,13 @@ var db = require("../models");
 module.exports = function (app) {
   // render html page that displays single listing 
 
+  // render index 
+  app.get("/", function(req,res) {
+    res.render('index', {
+      layout: 'main'
+    })
+  })
+
   app.get("/findSpot/:id", function (req, res) {
     console.log(req.params.id)
     db.parkingSpot.findById(req.params.id, {
@@ -23,7 +30,7 @@ module.exports = function (app) {
     });
   })
   // Load index page
-  app.get("/", function (req, res) {
+  app.get("/listing", function (req, res) {
     db.parkingSpot.findAll({
       include: [db.address, db.lease]
     })
