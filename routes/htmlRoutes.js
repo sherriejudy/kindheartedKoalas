@@ -28,7 +28,7 @@ module.exports = function (app) {
     res.render("maptest", {
       layout: 'mainmap'
     });
-  })
+  });
   // Load index page
   app.get("/listing", function (req, res) {
     db.parkingSpot.findAll({
@@ -40,15 +40,17 @@ module.exports = function (app) {
           parkingSpots: data
         });
       });
-  })
+  });
   // Load index page
   app.get("/vendorInput", function (req, res) {
     res.render("vendorInput");
-  })
+  });
 
   app.get("/vendorConfirmation", function (req, res) {
-    res.render("vendorConfirmation");
-  })
+    res.render("vendorConfirmation", {
+      //parkingSpots: null
+    });
+  });
 
   // Render 404 page for any unmatched routes
   app.get("*", function (req, res) {

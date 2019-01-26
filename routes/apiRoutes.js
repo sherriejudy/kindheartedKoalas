@@ -59,8 +59,8 @@ module.exports = function (app) {
   });
 
   app.get("/vendorConfirmation", function (req, res) {
-
-  })
+    res.render("vendorConfirmation");
+  });
 
 
   app.post("/vendorInput", function (req, res) {   //this function is necessary to transfer input form data to the database
@@ -81,21 +81,21 @@ module.exports = function (app) {
         pmt_freq: req.body.leaseDetails.paymentFrequency,
         price: req.body.leaseDetails.price
 
-    },
-    address: {
-      address_type: "parkingSpot",
-      unit: req.body.parkingSpotDetails.unit,
-      street_number: req.body.parkingSpotDetails.streetNumber,
-      street_name: req.body.parkingSpotDetails.streetName,
-      street_dir: null,
-      city: req.body.parkingSpotDetails.city,
-      postal_code: req.body.parkingSpotDetails.postalCode
-    }
+      },
+      address: {
+        address_type: "parkingSpot",
+        unit: req.body.parkingSpotDetails.unit,
+        street_number: req.body.parkingSpotDetails.streetNumber,
+        street_name: req.body.parkingSpotDetails.streetName,
+        street_dir: null,
+        city: req.body.parkingSpotDetails.city,
+        postal_code: req.body.parkingSpotDetails.postalCode
+      }
 
     },
-    {include: [db.lease,db.address]}).then(function (newSpot) {
-      res.json(newSpot);
-    });
+      { include: [db.lease, db.address] }).then(function (newSpot) {
+        res.json(newSpot);
+      });
   });
 
 
