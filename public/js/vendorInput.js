@@ -28,6 +28,8 @@ $(".create-form").submit(function (event) {
 
     }
 
+
+
     var data = {
         leaseDetails: leaseDetails,
         parkingSpotDetails: parkingSpotDetails,
@@ -40,7 +42,10 @@ $(".create-form").submit(function (event) {
         aboutYourself: aboutYourself
     }));
 
-    $.ajax('http://localhost:3000/vendorInput', {
+    // adding geocode call
+    $.get('/api/geocode?address='+)
+    .then(function(data,err){
+        $.ajax('http://localhost:3000/vendorInput', {
         type: 'POST',
         data: JSON.stringify({
             leaseDetails: leaseDetails,
@@ -57,6 +62,8 @@ $(".create-form").submit(function (event) {
         error: function () { console.log('error'); }
     });
 
+    })
+    
 
     console.log(JSON.stringify(leaseDetails) + "\n" + JSON.stringify(parkingSpotDetails) + " \n " + JSON.stringify(aboutYourself));
 
