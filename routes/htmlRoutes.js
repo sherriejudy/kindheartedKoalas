@@ -30,6 +30,9 @@ module.exports = function (app) {
     });
   });
   // Load index page
+
+  //test
+
   app.get("/listing", function (req, res) {
     db.parkingSpot.findAll({
       include: [db.address, db.lease]
