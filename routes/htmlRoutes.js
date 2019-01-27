@@ -3,12 +3,32 @@ var db = require("../models");
 module.exports = function (app) {
   // render html page that displays single listing 
 
-  // render index 
+  // render index page
   app.get("/", function(req,res) {
     res.render('index', {
       layout: 'main'
     })
   })
+
+  // test map route
+  app.get("/map", function (req, res) {
+    res.render("maptest", {
+      layout: 'mainmap'
+    });
+  });
+
+  app.get("/parkingSpots", function (req, res) {
+    db.parkingSpot.findAll({
+      include: [db.address, db.lease]
+    })
+      .then(function (data) {
+        res.render("spotListing", {
+          parkingSpots: data
+        });
+      });
+  });
+
+  // individual spot listing 
 
   app.get("/findSpot/:id", function (req, res) {
     console.log(req.params.id)
@@ -23,37 +43,11 @@ module.exports = function (app) {
 
   });
 
-  // test map route
-  app.get("/map", function (req, res) {
-    res.render("maptest", {
-      layout: 'mainmap'
-    });
-  });
-  // Load index page
-
-  //test
-
-  app.get("/listing", function (req, res) {
-    db.parkingSpot.findAll({
-      include: [db.address, db.lease]
-    })
-      .then(function (data) {
-        res.render("spotListing", {
-          msg: 'test',
-          parkingSpots: data
-        });
-      });
-  });
-  // Load index page
-  app.get("/vendorInput", function (req, res) {
+  // sell a parking spot 
+  app.get("/sellaspot", function (req, res) {
     res.render("vendorInput");
   });
 
-  app.get("/vendorConfirmation", function (req, res) {
-    res.render("vendorConfirmation", {
-      //parkingSpots: null
-    });
-  });
 
   // Render 404 page for any unmatched routes
   app.get("*", function (req, res) {
