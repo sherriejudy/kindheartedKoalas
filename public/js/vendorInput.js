@@ -47,10 +47,13 @@ $(".create-form").submit(function (event) {
         contentType: 'application/json'
     })
     .then(function(data,err){
-        window.location.href='/vendorconf'
+        console.log(data)
+        //window.location.href='/vendorconf'
     })
 
     });
+
+
     
 
 
